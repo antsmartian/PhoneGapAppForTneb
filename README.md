@@ -27,4 +27,4 @@ The native android app is available [here][2]
 License
 ----------------------
 This project is released under [MIT license see here][3].
-[3]:https://github.com/antoaravinth/PhoneGapAppForTneb/blob/master/license.txt
+[3]:https://github.com/antoaravinth/PhoneGapAppForTneb/blob/master/www/license.txt
