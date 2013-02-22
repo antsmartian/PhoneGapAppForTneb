@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>TNEB UnitCalculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Add the depedency!-->
+        <link href="bootStrap.css" rel="stylesheet">
+
+        <!--Custom css file-->
+        <style type="text/css">
+            .input-text { width: 35px }
+
+            .text-color {
+                color:#B3B3F7;
+            }
+
+            .center-screen{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -50px;
+                margin-left: -50px;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+
+        <!--Utility functions-->
+        <script type="text/javascript">
+
+            function cacluateUnits()
+            {
+                var netAmount = 0
+                var fixedCharges = 0
+                var units = document.getElementById('enteredUnits').value
+
+                if (units <= 100) {
+                    netAmount = units + 20;
+                    fixedCharges = 20;
+                } else if (units > 100 && units <= 200) {
+                    netAmount = (units * 1.50) + 20;
+                    fixedCharges = 20;
+                } else if (units <= 500) {
+                    var partial = 400;
+                    netAmount = ((units - 200) * 3) + 30 + partial;
+                    fixedCharges = 30;
+                } else if (units > 500) {
+                    var partial1 = 600;
+                    var partial2 = 1200;
+                    netAmount = ((units - 500) * 5.75) + 40 + partial1 + partial2;
+                    fixedCharges = 40;
+                }
+
+
+                netAmount = Math.round(netAmount) //round the value
+
+                //construct the params
+                var urlWithParams = "results.html?units=" + units + "&fixedCharges=" + fixedCharges
+                                        + "&netAmount=" + netAmount
+
+                //open up the resulting page
+                window.open(urlWithParams,'_self',false)
+            }
+
+        </script>
+
+
+    </head>
+    <body background = "background.jpg">
+
+        <div style="text-align: center; ">
+            <p class="text-color"><b>TNEB UnitCalculator</b></p>
+            <div class="center-screen">
+                <input type="text" placeholder="Units" class="input-text" id="enteredUnits">
+                <br/>
+                <button class="btn btn-primary" type="button" onclick="cacluateUnits()">Calculate</button>
+            </div>
+        </div>
+
+    </body>
+</html>

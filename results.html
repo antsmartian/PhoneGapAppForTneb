@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TNEB UnitCalculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Add the depedency!-->
+        <link href="bootStrap.css" rel="stylesheet">
+
+        <!--Custom css file-->
+        <style type="text/css">
+            .bold {
+                font-weight: bold;
+            }
+
+            .table .text-right {
+                text-align: right;
+            }
+
+            .text-color {
+                color:#B3B3F7;
+            }
+
+            .padding {
+                padding: 2em;
+            }
+
+            .link-text-size {
+                font-size:150%;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split('&');
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split('=');
+                    if (decodeURIComponent(pair[0]) == variable) {
+                        return decodeURIComponent(pair[1]);
+                    }
+                }
+                console.log('Query variable %s not found', variable);
+            }
+
+            /*
+            console.log(getQueryVariable('units'))
+            console.log(getQueryVariable('fixedCharges'))
+            console.log(getQueryVariable('netAmount')) */
+
+            window.onload = function() {
+
+                var units =  getQueryVariable('units')
+                var cc    =  getQueryVariable('netAmount') -  getQueryVariable('fixedCharges')
+                var fc    =  getQueryVariable('fixedCharges')
+                var na    =  getQueryVariable('netAmount')
+
+                //fill in the datas
+                document.getElementById("units").appendChild(document.createTextNode(units))
+                document.getElementById("cc").appendChild(document.createTextNode(cc))
+                document.getElementById("fc").appendChild(document.createTextNode(fc))
+                document.getElementById("na").appendChild(document.createTextNode(na))
+            }
+
+        </script>
+
+
+    </head>
+    <body background = "background.jpg" style="text-align: center;" >
+
+        <p class="bold text-color">TNEB UnitCalculator</p>
+        <br><br>
+
+        <table class="table padding" width="100%">
+            <caption</caption>
+            <tbody>
+            <tr>
+                <td class="bold text-color">Units entered</td>
+                <td class="text-right text-color" id="units"></td>
+            </tr>
+            <tr>
+                <td class="bold text-color">Consumption charges</td>
+                <td class="text-right text-color" id="cc"></td>
+            </tr>
+            <tr>
+                <td class="bold text-color">Fixed charges</td>
+                <td class="text-right text-color" id="fc"></td>
+            </tr>
+            <tr>
+                <td class="bold text-color">Net Amount</td>
+                <td class="text-right text-color" id="na"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="bold text-color link-text-size" href="index.html"><u>Go Back!</u></a>
+    </body>
+</html>
