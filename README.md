@@ -2,7 +2,7 @@ A PhoneGap App which is used to calculate the bill amount for the given input(in
 
 How To Build:
 -----------------
-The project consists of the requried `.html`,`.js` file in `www` folder. which can be zipped and uploaded to the
+The project consists of the requried `.html`,`.js` file in `www` folder which can be zipped and uploaded to the
 [Adobe Phone Gap Build Tool][1]
 [1]:https://build.phonegap.com
 
@@ -16,9 +16,10 @@ platforms:
    - BlackBerry (signing the app required)
    - Symbian
 
-Once the build is done the app can be downloaded from the web UI.
+Once the build is done the app for provided platforms can be downloaded from the web UI.
 
-The installation files for several mobile platforms can be found inside the `installation_files` directory.
+The installation files for several mobile platforms can be found inside the `installation_files` directory. Which 
+can be downloaded and install in respective mobile platforms.
 
 Note:
 --------------------
