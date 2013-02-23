@@ -2,25 +2,27 @@ A PhoneGap App which is used to calculate the bill amount for the given input(in
 
 How To Build:
 -----------------
-The project consists of the requried `.html`,`.js` file which can be zipped and uploaded to the
+The project consists of the requried `.html`,`.js` file in `www` folder. which can be zipped and uploaded to the
 [Adobe Phone Gap Build Tool][1]
 [1]:https://build.phonegap.com
 
 The build tool just extracts the required contents and provide the installation files for the following 
 platforms:
 
-   - iOS
+   - iOS (signing the app required)
    - Windows
    - Hp
-   - Android
-   - BlackBerry
+   - Android (signing the app required)
+   - BlackBerry (signing the app required)
    - Symbian
 
 Once the build is done the app can be downloaded from the web UI.
 
+The installation files for several mobile platforms can be found inside the `installation_files` directory.
+
 Note:
 --------------------
-The native android app is available [here][2]
+The native android app for this project is available [here][2]
 [2]:https://github.com/antoaravinth/TNEB-UnitCalculator
 
 
